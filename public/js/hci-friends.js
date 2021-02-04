@@ -9,8 +9,19 @@ $(document).ready(function() {
  * Function that is called when the document is ready.
  */
 function initializePage() {
-	console.log("Javascript connected!");
+	console.log("Javascript connected!")
+	//$("#friends").click(function(e) {
+		//$("a.name").text(anagrammedName(name));
+	//})
+	//$("friends.class").click(projectClick);
+	$("friends.class").click(anagrammedName)
 }
+ 
+
+
+//$("#name").projectClick((e) {
+	//$("a.name").text(name);
+//})
 
 function anagrammedName(name) {
 	// Thanks, Internet Anagram Server!
@@ -43,4 +54,16 @@ function anagrammedName(name) {
 		console.log(name + " not known for anagramming.");
 		return name;
 	}
+}
+
+ function projectClick(e) { 
+    console.log("Name clicked");
+    // prevent the page from reloading      
+    e.preventDefault()
+    // In an event handler, $(this) refers to      
+    // the object that triggered the event      
+    var thisName=$(this).text("#id");
+    console.log(thisName);
+    $(this).anagrammedName("thisName");
+
 }
